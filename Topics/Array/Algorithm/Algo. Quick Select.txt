@@ -1,0 +1,22 @@
+** Quick Select ** : used for find min/max kth element from array. choose last element as pivot and find correct index for pivot. is pivot +1 is match with k then it is kth smallest element from array or if len(array) - pivot +1 is match with k then it is kth largest element from array. 
+
+Algorithm: 
+** Partition **
+1. pivot as high, i = low, j = low.
+2. if( a[j] <= a[pivot]), then swap a[j] and a[i] and i increment by 1.
+3. repeat step 2 till j < high.
+4. swap a[i] and a[pivot].
+5. pivot = i, return pivot. 
+**Note: i represent the index where left side have smaller than pivot, j present the traversal of array.
+
+** Quick Select ** // for kth smaller element
+
+1. p = partition(low, high)
+2. if(p+1 == k) return a[p]		// for kth smaller element
+3. if(p < k) QuickSelect(p+1, high)	
+4. if(p > k) QuickSelect(low, p-1)
+5. execute only is low <= high 
+
+** Quick Select ** // for kth largest element
+
+convert kth largest to smallest use same logic: array.size()-k+1

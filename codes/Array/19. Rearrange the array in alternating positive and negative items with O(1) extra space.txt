@@ -1,0 +1,28 @@
+// Approach 1: TC: O(n log n) + O(n*n), SC: O(1)
+        // sort(arr.begin(),arr.end());
+        // int last = arr[arr.size()-1];
+        // int i = 0;
+        // while(i<arr.size()) {
+        //     for(int j = arr.size()-1;j>i;j--) {
+        //         arr[j] = arr[j-1]; 
+        //     }
+        //     arr[i] = last;
+        //     last = arr[arr.size()-1];
+        //     i+=2;
+        // }
+        
+        // Approach 2: TC: O(n) + O(n log n), SC: O(n)
+ vector<int> ans;
+        sort(arr.begin(),arr.end());
+        int i = 0;
+        int mini = 0;
+        int mixi = arr.size()-1;
+        while(mini<=mixi) {
+            ans.push_back(arr[mixi--]);
+            ans.push_back(arr[mini++]);
+            i+=2;
+        }
+        int j = 0;
+        for(int a:ans) {
+            arr[j++] = a;    
+        }

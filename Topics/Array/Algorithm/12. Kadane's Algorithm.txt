@@ -1,0 +1,9 @@
+ Kadane's Algorithm:   Find Largest sum contiguous Subarray
+Time Complexity: O(n), Space Complexity: O(1)
+Approach : Kadane's Algorithm
+1. sum = 0, maxi = first element
+2. loop from i = 0 till last index
+	1. sum = sum + a[i]
+	2. maxi = max(sum, maxi)
+	3. if sum < 0(-ve) sum = 0
+3. return maxi.

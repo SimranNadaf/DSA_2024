@@ -1,0 +1,8 @@
+** Minimum no. of Jumps to reach end of an array
+Time Complexity: O(n), Space Complexity: O(1)
+Approach: using greedy apporoach
+1. if(a[0]==0) return -1 or end else pos = 0, des = 0, jump = 0
+2. loop from i = 0 till second last index, 
+	1. des = max(des, a[i]+1)	--> checking all steps and putting maximum in des
+	2. if(pos == i) then if(pos == des) return -1. else pos = des, jump++.	--> when all steps check and updating position to it's max position. if position and destination is same then it indicate that there is no way to go next. then return -1.
+3. return jump.

@@ -1,0 +1,66 @@
+** Intersection of two Arrays:
+code: c++
+#include <iostream>
+#include <map>
+#include <vector>
+using namespace std;
+
+vector<int> intersection(vector<int> a, vector<int> b) {
+        map<int, int> map;
+        for(auto e: a) {
+            map[e] = 0;
+        }
+        for(auto e: b) {
+            if(map.find(e) != map.end()){
+                map[e] = 1;
+            }
+        }
+        vector<int> intrs;
+        for(auto e: map){
+            if(e.second == 1){
+                intrs.push_back(e.first);
+            }
+        }
+        return intrs;
+}
+
+int main() {
+    vector<int> ans = intersection({1,2,3,4,5},{1,2,3,4});
+    
+    for(auto i: ans)
+        cout << i << endl;
+
+    return 0;
+}
+
+** Union of Two array
+code: c++
+// Online C++ compiler to run C++ program online
+#include <iostream>
+#include <map>
+#include <vector>
+using namespace std;
+
+vector<int> unionArray(vector<int> a, vector<int> b) {
+        map<int, int> map;
+        for(auto e: a) {
+            map[e] = 1;
+        }
+        for(auto e: b) {
+            map[e] = 1;
+        }
+        vector<int> ans;
+        for(auto e: map){
+            ans.push_back(e.first);
+        }
+        return ans;
+}
+
+int main() {
+    vector<int> ans = unionArray({1,2,4,5},{6,7,8,1});
+    
+    for(auto i: ans)
+        cout << i << endl;
+
+    return 0;
+}

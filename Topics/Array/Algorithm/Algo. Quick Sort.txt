@@ -1,0 +1,16 @@
+**Quick Sort** : sort array using a method that it choose an element(first) as pivot, find right position of pivot, it merge array into sub array, left part of array have all less than pivot and right part of array have all greater than pivot. repeat this process for both subarray till subarray remains only one element.
+Algorithm : Time Complexity: O(n log n), Space Complexity: O(log n to n) used for stack
+** Partition : **
+1. declared pivot as low of array, i as low + 1 and j as high.
+2. increment  i by 1, till i th index element is greater than pivot th index element.
+3. decrement j by 1, till j th index element is less than pivot th index element
+4. swap i th index element and j th index element. (i have greater element than pivot that should be place at right side, and j have less element than pivot that should be place at left side of array)
+5. steps: 2, 3, 4 repeat till i < j.
+6. when j cross i, then swap j th index element and pivot th index element.( here all element greater place at right side and all element smaller place at left).
+7. return new pivot index.
+
+** Quick Sort **
+1. pivot = partition(low as 0 and high as size()-1)
+2. Quicksort(low, pivot-1)			// for left sub array
+3. Quicksort(pivot+1, high)			// for right sub array
+4. this process repeat till low < high

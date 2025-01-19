@@ -1,0 +1,8 @@
+Union: element that is present in array one either array two.
+use hash table(map) for getting union of two arrays
+
+Intersection: element that is present both array one and array two
+use hash table(map) for getting intersection of two arrays
+
+Time Complexity: O(n)
+Space Complexity: O(n)

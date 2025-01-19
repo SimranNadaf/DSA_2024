@@ -1,0 +1,16 @@
+** Rearrange the array in alternating positive and negative items with O(1) extra space
+// Approach 1: TC: O(n log n) + O(n*n), SC: O(1)
+1. sort array in ascending order
+2. int last element in last varible, i = 0.
+3. shift all element by one right side.
+4. place last variable value at arr[i], and last as arr[size()-1].
+5. Repeat 3 and 4 step till i reach to last index.
+      
+// Approach 2: TC: O(n) + O(n log n), SC: O(n) --> used extra space as vector
+1. ans vector of size input array.
+2. sort input array by ascending order.
+3. vabiable: mini = 0, mixi = last index.
+4. loop till mini <= mixi
+	1. push arr[mixi] into ans vector. decrement mixi by 1
+	2. push arr[mini] into ans vector. increment mini by 1.
+4. copy ans into input array

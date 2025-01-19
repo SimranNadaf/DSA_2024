@@ -1,0 +1,13 @@
+** Sort 0's 1's and 2's
+
+Approach 1: Sort Array using Sort(): TC: O( n log n ), SC: O(1)
+
+Approach 2: Count 0's 1's and 2's: (Better) :  TC: O( n ), SC: O(1)
+1. use count for 0 ,1 and 2.
+2. arr[i] = 0 till counter of 0 is not zero(decrement after every assignment), then use counter of 1 and then counter of 2.
+
+Approach 3: Dutch National Flag: Expected : TC: O( n ), SC: O(1)
+1. low = 0, mid = 0, high = last element index.
+2. repeat above steps mid <= high
+	2.1. if mid th element is 0. then swap mid and low index element, low and mid increment by 1. 
+	2.2. if mid th elemnt is 2. then swap mid and high index element, decrement high by 1.

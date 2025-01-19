@@ -1,0 +1,21 @@
+Factorials of large numbers
+Time Complexity: O(n * m) n-number|m-lenght of answer, Space Complexity: O(1)
+code: c++
+vector<int> factorial(int n) {
+        vector<int> ans;
+        ans.push_back(1);
+        for(int i=2;i<=n;i++) {
+            int carry = 0;
+            for(int j=0;j<ans.size();j++){
+                int temp = ans[j] * i + carry;
+                ans[j] = (temp % 10);
+                carry = temp / 10;
+            }
+            while( carry != 0 ) {
+                ans.push_back(carry%10);
+                carry = carry / 10;
+            }
+        }
+        reverse(ans.begin(), ans.end());
+        return ans;
+    }

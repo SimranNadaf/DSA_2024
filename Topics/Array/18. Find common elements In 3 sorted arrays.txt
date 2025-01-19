@@ -1,0 +1,20 @@
+** Find Common in 3 sorted array
+Approach 1: using Hash table
+Time Complexity: O(n), Space Complexity: O(n)
+1. use hash table as map.
+2. for first array element set as 1 for all elements.
+3. for second array element set as 2 if element found for all elements.
+4. for third array element set as 3 if element found and value of element is 2 for all elements.
+4. for all elements from map, if element found in map and element value is 3 then push element inn ans vector/array.
+
+Approach 2: using three pointers
+Time Complexity: O(n1+n2+n3), Space Complexity: O(1)
+1. set i = 0 , j = 0, k = 0, n1 as size of array 1, n2 as size of array 2, n3 as size of array 3.
+2. loop till i < n1 OR j < n2 OR k < n3
+	1. if ( a1[i]==a2[j]  && a3[k] == a2[j]) then add a1[i] into ans vector/array and increment i, j, k by 1. 
+		then seperate loop for all three array till pointer is less than size and current element(i,j,k) is equal to previous element(i-1,j-1,k-1). // skipping duplicate elements.
+		increament i,j,k by 1.
+	2. else if(a1[i] < a2[j]) i++.
+	3. else if(a2[j] < a3[k]) j++.
+	4. else k++.		--> a3[k] is smallest
+3. return ans.

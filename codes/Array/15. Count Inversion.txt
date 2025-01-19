@@ -1,0 +1,38 @@
+** Count Inversion:
+time complexity: O(n log n), Space Complexity: O(n) 
+code: c++
+
+    void merge(int start, int mid, int end, vector<int> &arr, int &count) {
+        vector<int> a1(arr.begin()+start, arr.begin()+mid+1);
+        vector<int> a2(arr.begin()+mid+1, arr.begin()+end+1);
+        
+        int i = 0;
+        int j = 0;
+        while(i<a1.size() && j<a2.size()) {
+            if(a1[i] <= a2[j]) {
+                arr[start++] = a1[i++];
+            }
+            else {
+                arr[start++] = a2[j++];
+                count+= (a1.size() - i);
+            }
+        }
+        while(i<a1.size())
+            arr[start++] = a1[i++];
+        while(j<a2.size())
+            arr[start++] = a2[j++];
+            
+    }
+    void divide(int start, int end, vector<int> &arr, int &count) {
+        if(start<end) {
+            int mid = (start + end) / 2;
+            divide(start, mid, arr, count);
+            divide(mid+1, end, arr, count);
+            merge(start, mid, end, arr, count);
+        }
+    }
+    int inversionCount(vector<int> &arr) {
+        int count = 0;
+        divide(0, arr.size()-1, arr, count);
+        return count;
+    }

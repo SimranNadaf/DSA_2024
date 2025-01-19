@@ -1,0 +1,6 @@
+** Merge 2 sorted arrays without using Extra space.
+Time Complexity: O(n*m), Space Complexity: O(1)
+Approach: using insert sort algorithm.
+1. for loop for i = 0 and till last index.
+	1. if a[i] >= b[0] swap a[i] and b[0].
+	2. apply insertion sort on b(second array), travel i= 0 to second last element, second array till b[i] < b[i+1] else break.

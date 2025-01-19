@@ -1,0 +1,8 @@
+** Move all the negative elements to one side(left) of the array
+Time Complexity: O(n), Space Complexity: O(n)
+Approach: using extra array --> it prevent its order.
+1. ans vector.
+2. i = 0, if(a[i]>=0) push a[i] into ans vector and i++. repeat till i < array size	
+3. i = 0, if(a[i] < 0) push a[i] into ans vector and i++. repeat till i < array size
+4. return ans. or copy ans vector into original vector.
+

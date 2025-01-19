@@ -1,0 +1,8 @@
+** Best time to buy and sell stock
+Time Complexity: O(n), Space Complexity: O(1)
+1. buy = 0, sell=0, profit = 0.
+2. loop from i =0 till size of array.
+	1. if(a[i] < a[sell]) then profit += a[sell] - a[buy]. sell = buy = i.
+	2. else sell = i.
+3. if sell != buy then profit += a[sell] - a[buy].
+4. return profit.

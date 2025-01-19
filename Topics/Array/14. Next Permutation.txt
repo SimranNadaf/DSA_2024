@@ -1,0 +1,17 @@
+** Next Permutation:
+Time Complexity: O(n), Space Complexity: O(1)
+1. i = second last index of array.
+2. loop till a[i] >= a[i+1] then i--.	--> for find the element where next max element can with this index for next max permutation
+3. if i < 0 reverse array return array.		--> if array is in max range then reverse the array for next smallest permutation.
+4. index, nextMin as INT_MAX		
+5. loop j from i+1 till last index.		-->find next max element for replace with ith index element
+	1. if(a[j] > a[i]) nextMin = min(nextMin, a[j]). index = j.
+6. swap a[i] and a[index].			--> swap first found smallest value and next greater value than this
+7. sort from i+1 till end of array.		--> sort remaining sort from i+1 to get smallest permutation.
+
+input --> 3 4 5 7 6
+ith element = 5
+nextMin = 6
+swap 5 and 6 --> 3 4 6 7 5
+sort from i+1 till end --> 3 4 6 5 7
+ 

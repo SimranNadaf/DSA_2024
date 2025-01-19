@@ -1,0 +1,12 @@
+Minimize the Heights
+Time Complexity: O(n log n), Space Complexity: O(1)
+Approach : 
+1. sort array
+2. smallest as 0th index + k, largest as last element - k.
+3. ans as last(last element) + first(smallest element).
+4. loop from i = 1 till last index.
+	1. minH = min(smallest, a[i]-k),	--> find smallest pilar if found 
+	2. maxH = max(largest, a[i-1]+k),	--> find tallest pilar if found
+	3. if minH < 0, end this interation	--> if smallest goes to -ve, stop this iteration.
+	4. ans = min(ans, maxH - minH)		--> calculate the new minimum different value from new smallest and largest pilar
+5. return ans.

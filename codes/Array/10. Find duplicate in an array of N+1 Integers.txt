@@ -1,0 +1,16 @@
+** Find duplicate in an array of N+1 Integers
+Time Complexity: O(n), Space Complexity: O(n)
+Code: c++
+vector<int> findDuplicates(vector<int>& arr) {
+        map<int, int> map;
+        for(auto a: arr) {
+            map[a]++;
+        }
+        vector<int> ans;
+        for(auto m:map) {
+            if(m.second > 1) {
+                ans.push_back(m.first);
+            }
+        }
+        return ans;
+}

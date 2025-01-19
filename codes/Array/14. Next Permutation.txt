@@ -1,0 +1,26 @@
+** Next Permutation:
+Time Complexity: O(n), Space Complexity: O(1)
+Code: c++
+    void nextPermutation(vector<int>& arr) {
+        int i = arr.size()-2;
+        while(arr[i] >= arr[i+1]){
+            i--;
+        }
+        if(i < 0) {
+            reverse(arr.begin(), arr.end());
+            return;
+        }
+        int nextSmall = INT_MAX;
+        int index = i+1;
+        for(int j=i+1;j<arr.size();j++){
+            if(arr[j] > arr[i]) {
+                nextSmall = min(nextSmall, arr[j]);
+                index = j;
+            }
+        }
+        int temp = arr[index];
+        arr[index] = arr[i];
+        arr[i] = temp;
+        
+        sort(arr.begin()+i+1, arr.end());
+    }

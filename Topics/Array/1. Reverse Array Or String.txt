@@ -1,0 +1,12 @@
+Reverse Array:
+Approach 1: TC: O(n) and SC: O(n)
+	1. start=0, create new array of size of array, end = len - 1 (array)
+	2. place array[start] to newArray[end]
+	3. start increase by 1 and end decrement by 1.
+	4. 2 and 3 step repeat till start < len(array) OR end >=0.
+
+Approach 2: TC: O(n) and SC: O(1) --> Expected Approach, inplace 
+	1. start = 0. end = len - 1.
+	2. swap array[start] and array[end].
+	3. start ++, and end --.
+	4. repeat 2 and 3 step till start < end.

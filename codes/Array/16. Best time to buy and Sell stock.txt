@@ -1,0 +1,21 @@
+** Best time to buy and sell stock
+Time Complexity: O(n), Space Complexity: O(1)
+Code: c++
+int stockBuySell(vector<int> &arr) {
+        int buy = 0;
+        int sell = 0;
+        int profit = 0;
+        for(int i=0;i<arr.size();i++) {
+            if(arr[i] > arr[sell]) {
+                sell = i;
+            }
+            else {
+                profit += arr[sell] - arr[buy];
+                sell = buy = i;
+            }
+        }
+        if(sell != buy) {
+            profit += arr[sell] - arr[buy];
+        }
+        return profit;
+    }

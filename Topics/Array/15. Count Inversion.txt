@@ -1,0 +1,6 @@
+** Count Inversion:
+time complexity: O(n log n), Space Complexity: O(n) 
+Approach: Merge Sort.
+1. divide array into two half till one element left in array.(recursively).
+2. merge divided array into original array, if second array element is less then count increment by 1. (recursively) for all divided arrays.
+3. return count.

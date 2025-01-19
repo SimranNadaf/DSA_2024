@@ -1,0 +1,41 @@
+Code of quick select:
+** for Smallest kth element:
+Code:
+void swap(vector<int> &a, int i, int j) {
+    int temp = a[i];
+    a[i] = a[j];
+    a[j] = temp;
+}
+
+int Partition(vector<int> &a, int low, int high) {
+    int pivot = high;
+    int i = low;
+    for(int j=low;j<high;j++){
+        if(a[j] <= a[pivot]){
+            swap(a,i,j);
+            i++;
+        }
+    }
+    swap(a,i,pivot);
+    pivot = i;
+    return pivot;
+}
+
+    int  QuickSelectSmallest(vector<int> &a, int low, int high, int k) {
+        if(low<=high) {
+           
+            int p = Partition(a,low, high);
+            if(p+1 == k) {
+                return a[p];
+            }
+            else if(p < k) QuickSelectSmallest(a,p+1,high, k);
+            else QuickSelectSmallest(a,low,p-1, k);
+        }
+        else
+            return -1; 
+    }
+    int kthSmallest(vector<int> &arr, int k) {
+        return QuickSelectSmallest(arr, 0, arr.size()-1, k);
+    }
+
+** For Largest Kth element form array: convert largest kth element convert it into smallest kth element using  arr.size()-k+1 and use same code.

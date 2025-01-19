@@ -1,0 +1,25 @@
+** Merge Intervals
+Time Complexity: O(n log n), Space Complexity: O(1)
+Code: c++
+    vector<vector<int>> mergeOverlap(vector<vector<int>>& arr) {
+        sort(arr.begin(),arr.end(), [](const vector<int> &a, const vector<int> &b){
+            return a[0] < b[0];
+        });
+        int n = arr.size()-1;
+        vector<vector<int>> ans;
+        int first = arr[0][0];
+        int second = arr[0][1];
+        
+        for(int i=1;i<arr.size();i++) {
+            if(arr[i][0] <= second) {
+                second = max(second, arr[i][1]);
+            }
+            else{
+                ans.push_back({first, second});
+                first = arr[i][0];
+                second = arr[i][1];
+            }
+        }
+        ans.push_back({first, second});
+        return ans;
+    }

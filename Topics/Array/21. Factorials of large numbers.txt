@@ -1,0 +1,16 @@
+Factorials of large numbers
+Time Complexity: O(n * m) n-number|m-lenght of answer, Space Complexity: O(1)
+code: c++
+Approach:
+1. initialize an ans array of size 1 with 1 as first element.
+2. loop from i = 2 till n
+	1. carry = 0
+	2. loop from j = 0 to j less than size of ans array.
+		1. temp = ans[j] * i + carry
+		2. ans[i] = temp % 10.
+		3. carry = temp / 10.
+	3. loop till carry is not zero 0.
+		1. push carry%10 into ans array
+		2. carry = carry / 10.
+3. reverse ans array
+4. return ans array

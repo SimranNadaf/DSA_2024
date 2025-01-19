@@ -1,0 +1,10 @@
+** Find duplicate in an array of N+1 Integers
+Time Complexity: O(n), Space Complexity: O(n)
+Approach: using hash table(map)
+1. map of int, int and ans as array
+2. for loop from i = 0 to last index
+	1. map[a[i]]++
+3. loop for map
+	1. if map.value is greater than 1, then push key into ans array.
+4. return ans.
+	
